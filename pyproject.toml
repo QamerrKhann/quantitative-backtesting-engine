@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantitative-backtesting-engine"
+version = "1.0.0"
+description = "Daily-bar, long-only research backtester with lag-correct signals and transaction costs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+quantbt = "quantbt.cli:main"
+
+[tool.setuptools]
+packages = ["quantbt"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
